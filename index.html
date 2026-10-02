@@ -64,7 +64,7 @@ h2{font-size:32px;letter-spacing:-.02em;margin:0 0 8px}
 /* publications */
 .pub{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
 .pub:last-child{border-bottom:0}
-.pub img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:var(--chip)}
+.pub img,.pub video{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:var(--chip)}
 .pub .ph{aspect-ratio:4/3;border-radius:14px;border:1px solid var(--line);background:var(--chip);display:grid;place-items:center;color:var(--muted);font:12px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:12px}
 .pub h3{margin:0 0 6px;font-size:20px;line-height:1.3;letter-spacing:-.01em}
 .authors{color:var(--muted);font-size:15px;margin:0 0 6px}
@@ -143,7 +143,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap reveal">
     <h2>About</h2>
     <p class="sub">Stanford · University of Washington</p>
-    <p>I am a postdoctoral researcher in the <a href="https://s4lab.stanford.edu/">Smart Sensing Systems (S4) Lab</a> at Stanford, led by <a href="https://zerinakapetanovic.com">Zerina Kapetanovic</a>. I earned my Ph.D. in Computer Science &amp; Engineering at the University of Washington (2026), advised by <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, and worked with <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>'s Autonomous Insect Robotics Lab.</p>
+    <p>I am a postdoctoral researcher in the <a href="https://s4lab.stanford.edu/">Smart Sensing Systems (S4) Lab</a> at Stanford, working with <a href="https://zerinakapetanovic.com">Prof. Zerina Kapetanovic</a>. I recently completed my Ph.D. in Computer Science &amp; Engineering at the University of Washington, advised by <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, and worked with <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>'s Autonomous Insect Robotics Lab.</p>
     <p>Before that I earned my B.S. in Electrical &amp; Computer Engineering at UW, where I studied origami structures with <a href="https://www.aa.washington.edu/facultyfinder/jinkyu-jk-yang">Jinkyu Yang</a>. My interests span low-power systems, small-scale robotics, computing for sustainability, and applied machine learning.</p>
     <div class="stats">
       <div class="stat"><b>218</b><span>citations</span></div>
@@ -216,7 +216,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
     <div class="year">2023</div>
     <article class="pub reveal">
-      <img src="assets/pubs/Millimobile-MobiComp_website.gif" alt="MilliMobile robot" loading="lazy">
+      <video src="assets/pubs/Millimobile-MobiComp_website.mp4" poster="assets/pubs/Millimobile-MobiComp_website.jpg" aria-label="MilliMobile robot" autoplay loop muted playsinline preload="none"></video>
       <div>
         <h3>MilliMobile: An Autonomous Battery-free Wireless Microrobot</h3>
         <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <a href="https://zachary.englhardt.com">Zachary Englhardt*</a>, <span class="me">Vicente Arroyos*</span>, Dennis Yin, Shwetak Patel, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a></p>
@@ -225,7 +225,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </div>
     </article>
     <article class="pub reveal">
-      <img src="assets/pubs/wind_tunnel_website.gif" alt="Origami microfliers in a wind tunnel" loading="lazy">
+      <video src="assets/pubs/wind_tunnel_website.mp4" poster="assets/pubs/wind_tunnel_website.jpg" aria-label="Origami microfliers in a wind tunnel" autoplay loop muted playsinline preload="none"></video>
       <div>
         <h3>Solar-powered Shape-changing Origami Microfliers</h3>
         <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <span class="me">Vicente Arroyos*</span>, Amélie Ferran, Raul Villanueva, Dennis Yin, <a href="https://tilboon.github.io/">Tilboon Elberier</a>, Alberto Aliseda, <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, Shyam Gollakota</p>
@@ -234,7 +234,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </div>
     </article>
     <article class="pub reveal">
-      <img src="assets/pubs/Flybar_website.gif" alt="Miniature flybar helicopter" loading="lazy">
+      <video src="assets/pubs/Flybar_website.mp4" poster="assets/pubs/Flybar_website.jpg" aria-label="Miniature flybar helicopter" autoplay loop muted playsinline preload="none"></video>
       <div>
         <h3>Toward Sub-gram Helicopters: Designing a Miniaturized Flybar for Passive Stability</h3>
         <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <span class="me">Vicente Arroyos*</span>, Raul Villanueva*, Adriana Schulz, <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a></p>
@@ -245,7 +245,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
     <div class="year">2022</div>
     <article class="pub reveal">
-      <img src="assets/pubs/bioMouse_website.gif" alt="Biodegradable computer mouse" loading="lazy">
+      <video src="assets/pubs/bioMouse_website.mp4" poster="assets/pubs/bioMouse_website.jpg" aria-label="Biodegradable computer mouse" autoplay loop muted playsinline preload="none"></video>
       <div>
         <h3>A Tale of Two Mice: Sustainable Electronics Design and Prototyping</h3>
         <p class="authors"><span class="me">Vicente Arroyos</span>, Maria Viitaniemi, Nicholas Keehn, Vaidehi Oruganti, Winston Saunders, Karin Strauss, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, <a href="https://www.microsoft.com/en-us/research/people/bnguy/">Bichlien Nguyen</a></p>
@@ -254,7 +254,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </div>
     </article>
     <article class="pub reveal">
-      <img src="assets/pubs/leafout_bistability_website.gif" alt="Leaf-out origami grasping" loading="lazy">
+      <video src="assets/pubs/leafout_bistability_website.mp4" poster="assets/pubs/leafout_bistability_website.jpg" aria-label="Leaf-out origami grasping" autoplay loop muted playsinline preload="none"></video>
       <div>
         <h3>Leaf-like Origami with Bistability for Self-Adaptive Grasping Motions</h3>
         <p class="authors"><a href="https://hiromiyasuda.gitlab.io/research-web/#Research">Hiromi Yasuda</a>, <a href="https://kcwjohnson.com">Kyle Johnson</a>, <span class="me">Vicente Arroyos</span>, Koshiro Yamaguchi, <a href="https://directory.seas.upenn.edu/jordan-r-raney">Jordan R. Raney</a>, <a href="https://www.aa.washington.edu/facultyfinder/jinkyu-jk-yang">Jinkyu Yang</a></p>
@@ -329,7 +329,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <h2>Get in touch</h2>
     <p class="sub">Happy to chat about research, collaboration or outreach.</p>
     <div class="btns">
-      <a class="btn primary" href="mailto:arroyv@uw.edu">arroyv@uw.edu</a>
+      <a class="btn primary" href="mailto:arroyos@stanford.edu">arroyos@stanford.edu</a>
       <a class="btn" href="assets/Vicente_Arroyos_CV.pdf">Download CV</a>
       <a class="btn" href="https://scholar.google.com/citations?user=Eqpou6QAAAAJ&hl=en">Google Scholar</a>
       <a class="btn" href="https://github.com/arroyv">GitHub</a>
