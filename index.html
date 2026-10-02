@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vicente Arroyos</title>
+<meta name="description" content="Vicente Arroyos — postdoctoral researcher at Stanford's Smart Sensing Systems Lab. Sustainable, low-power computing and small-scale robotics.">
+<style>
+:root{
+  --bg:#fafaf9; --surface:#ffffff; --text:#14161a; --muted:#5b6270; --line:#e4e4e0;
+  --accent:#8c1515; --accent-soft:rgba(140,21,21,.08); --chip:#f0efec;
+}
+:root[data-theme="dark"]{
+  --bg:#0c0e12; --surface:#14171d; --text:#eef0f4; --muted:#9aa2b1; --line:#242934;
+  --accent:#ff8a7a; --accent-soft:rgba(255,138,122,.1); --chip:#1b1f27;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0e12; --surface:#14171d; --text:#eef0f4; --muted:#9aa2b1; --line:#242934;
+    --accent:#ff8a7a; --accent-soft:rgba(255,138,122,.1); --chip:#1b1f27;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;align-items:center}
+nav ul a{text-decoration:none;font-size:14.5px;color:var(--muted);transition:color .15s}
+nav ul a:hover{color:var(--text)}
+.pill{border:1px solid var(--line);border-radius:99px;padding:5px 14px;color:var(--text)!important}
+#theme{background:none;border:1px solid var(--line);color:var(--text);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px}
+
+/* hero */
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:center}
+.eyebrow{font:500 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+h1{font-size:clamp(40px,6.4vw,68px);line-height:1.04;letter-spacing:-.035em;margin:0 0 22px;font-weight:750}
+h1 span{color:var(--muted)}
+.lede{font-size:19px;color:var(--muted);max-width:560px;margin:0 0 30px}
+.lede b{color:var(--text);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-size:14.5px;font-weight:500;transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#14161a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#14161a}}
+.portrait{width:100%;aspect-ratio:1;object-fit:cover;border-radius:28px;border:1px solid var(--line);box-shadow:0 24px 60px -24px rgba(0,0,0,.35)}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:32px;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 40px}
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:28px}
+.stat b{display:block;font-size:30px;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:13.5px}
+.about p{max-width:720px}
+.about a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+/* publications */
+.pub{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
+.pub:last-child{border-bottom:0}
+.pub img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:var(--chip)}
+.pub .ph{aspect-ratio:4/3;border-radius:14px;border:1px solid var(--line);background:var(--chip);display:grid;place-items:center;color:var(--muted);font:12px ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:12px}
+.pub h3{margin:0 0 6px;font-size:20px;line-height:1.3;letter-spacing:-.01em}
+.authors{color:var(--muted);font-size:15px;margin:0 0 6px}
+.authors .me{color:var(--text);font-weight:600}
+.venue{font-size:15px;margin:0 0 12px}
+.venue i{color:var(--accent);font-style:normal;font-weight:600}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags a{font-size:13px;padding:3px 12px;border-radius:99px;background:var(--chip);text-decoration:none;transition:background .15s}
+.tags a:hover{background:var(--accent-soft);color:var(--accent)}
+.badge{font-size:12px;background:var(--accent-soft);color:var(--accent);padding:2px 9px;border-radius:99px;margin-left:8px;font-weight:600;vertical-align:middle}
+.year{font:600 13px ui-monospace,monospace;color:var(--muted);letter-spacing:.1em;margin:36px 0 0}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{display:block;text-decoration:none;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:16px;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card b{display:block;font-size:16px}
+.card span{color:var(--muted);font-size:14px}
+.outreach{display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:center}
+.outreach img{width:100%}
+:root[data-theme="dark"] .outreach img{filter:invert(.92) hue-rotate(180deg)}
+.press li{margin-bottom:10px}
+.press span{color:var(--muted);font-size:14px}
+ul.press{padding-left:20px}
+footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;padding-top:56px}
+  .portrait{max-width:240px;order:-1}
+  .pub,.outreach{grid-template-columns:1fr}
+  nav ul li:not(:last-child):not(:nth-last-child(2)){display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Vicente Arroyos</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#outreach">Outreach</a></li>
+      <li><a href="#people">Collaborators</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="pill" href="assets/Vicente_Arroyos_CV.pdf">CV</a></li>
+      <li><button id="theme" aria-label="Toggle theme">◐</button></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Postdoctoral Researcher · Stanford · S4 Lab</div>
+      <h1>Sustainable computing for <span>tiny, untethered machines.</span></h1>
+      <p class="lede">I build <b>low-power, battery-free and biodegradable systems</b> — from insect-scale robots that fly, roll and jump on harvested energy to greener electronics — and I run STEM outreach for underrepresented youth.</p>
+      <div class="btns">
+        <a class="btn primary" href="#research">See my research</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=Eqpou6QAAAAJ&hl=en">Google Scholar</a>
+        <a class="btn" href="https://github.com/arroyv">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/vicente-arroyos/">LinkedIn</a>
+      </div>
+    </div>
+    <img class="portrait" src="assets/headshot.jpg" alt="Portrait of Vicente Arroyos">
+  </header>
+</div>
+
+<section id="about" class="about">
+  <div class="wrap reveal">
+    <h2>About</h2>
+    <p class="sub">Stanford · University of Washington</p>
+    <p>I am a postdoctoral researcher in the <a href="https://s4lab.stanford.edu/">Smart Sensing Systems (S4) Lab</a> at Stanford, led by <a href="https://zerinakapetanovic.com">Zerina Kapetanovic</a>. I completed my Ph.D. in Computer Science &amp; Engineering at the University of Washington, advised by <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, and worked with <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>'s Autonomous Insect Robotics Lab.</p>
+    <p>Before that I earned my B.S. in Electrical &amp; Computer Engineering at UW, where I studied origami structures with <a href="https://www.aa.washington.edu/facultyfinder/jinkyu-jk-yang">Jinkyu Yang</a>. My interests span low-power systems, small-scale robotics, computing for sustainability, and applied machine learning.</p>
+    <div class="stats">
+      <div class="stat"><b>218</b><span>citations</span></div>
+      <div class="stat"><b>4</b><span>h-index</span></div>
+      <div class="stat"><b>9</b><span>publications</span></div>
+      <div class="stat"><b>2</b><span>nonprofit &amp; startup ventures</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <p class="sub">* denotes co-primary student authors. Full list on <a href="https://scholar.google.com/citations?user=Eqpou6QAAAAJ&hl=en" style="color:var(--accent)">Google Scholar</a>.</p>
+
+    <div class="year">2025</div>
+    <article class="pub reveal">
+      <div class="ph">Education<br>research</div>
+      <div>
+        <h3>Tool or Toy? Student Views on ChatGPT in Culturally Responsive Computing Education: A Preliminary Study</h3>
+        <p class="authors">A Cora, <span class="me">V Arroyos</span>, A Kimanje, L Alemayehu, J Solyst, RB Shapiro, V Iyer, et al.</p>
+        <p class="venue"><i>WEEF &amp; GEDC 2025</i></p>
+      </div>
+    </article>
+
+    <div class="year">2024</div>
+    <article class="pub reveal">
+      <div class="ph">Education<br>research</div>
+      <div>
+        <h3>Scalable Community Mentorship: A Vision for Engineering Literacy &amp; Access</h3>
+        <p class="authors">K Johnson, <span class="me">V Arroyos</span>, L Hussein, A Cora, E Sherif, C Garcia, T Barrett, et al.</p>
+        <p class="venue"><i>WEEF &amp; GEDC 2024</i></p>
+      </div>
+    </article>
+    <article class="pub reveal">
+      <div class="ph">Education<br>research</div>
+      <div>
+        <h3>Leveraging AI to Improve STEM Engagement for Black and Latine Youth</h3>
+        <p class="authors">A Cora, <span class="me">V Arroyos</span>, L Hussein, V Iyer, RB Shapiro, K Johnson</p>
+        <p class="venue"><i>Black Issues in Computing Education (BICE) 2024</i></p>
+      </div>
+    </article>
+    <article class="pub reveal">
+      <div class="ph">Education<br>research</div>
+      <div>
+        <h3>AVELA — A Vision for Engineering Literacy &amp; Access: Understanding Why Technology Alone Is Not Enough</h3>
+        <p class="authors">K Johnson, <span class="me">V Arroyos</span>, C Garcia, L Hussein, A Cora, T Melaku, et al.</p>
+        <p class="venue"><i>arXiv preprint 2024</i></p>
+        <div class="tags"><a href="https://arxiv.org/abs/2401.14581">arXiv</a></div>
+      </div>
+    </article>
+
+    <div class="year">2023</div>
+    <article class="pub reveal">
+      <img src="assets/pubs/Millimobile-MobiComp_website.gif" alt="MilliMobile robot" loading="lazy">
+      <div>
+        <h3>MilliMobile: An Autonomous Battery-free Wireless Microrobot</h3>
+        <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <a href="https://zachary.englhardt.com">Zachary Englhardt*</a>, <span class="me">Vicente Arroyos*</span>, Dennis Yin, Shwetak Patel, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a></p>
+        <p class="venue"><i>MobiCom 2023</i></p>
+        <div class="tags"><a href="https://millimobile.cs.washington.edu/">Project page</a></div>
+      </div>
+    </article>
+    <article class="pub reveal">
+      <img src="assets/pubs/wind_tunnel_website.gif" alt="Origami microfliers in a wind tunnel" loading="lazy">
+      <div>
+        <h3>Solar-powered Shape-changing Origami Microfliers</h3>
+        <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <span class="me">Vicente Arroyos*</span>, Amélie Ferran, Raul Villanueva, Dennis Yin, <a href="https://tilboon.github.io/">Tilboon Elberier</a>, Alberto Aliseda, <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, Shyam Gollakota</p>
+        <p class="venue"><i>Science Robotics 2023</i> <span class="badge">Press: CNET</span></p>
+        <div class="tags"><a href="https://www.science.org/doi/full/10.1126/scirobotics.adg4276">Paper</a><a href="https://homes.cs.washington.edu/~vsiyer/Papers/origami_fliers-arxiv.pdf">Preprint</a><a href="https://origamifliers.cs.washington.edu/">Project page</a></div>
+      </div>
+    </article>
+    <article class="pub reveal">
+      <img src="assets/pubs/Flybar_website.gif" alt="Miniature flybar helicopter" loading="lazy">
+      <div>
+        <h3>Toward Sub-gram Helicopters: Designing a Miniaturized Flybar for Passive Stability</h3>
+        <p class="authors"><a href="https://kcwjohnson.com">Kyle Johnson*</a>, <span class="me">Vicente Arroyos*</span>, Raul Villanueva*, Adriana Schulz, <a href="https://faculty.washington.edu/minster/">Sawyer Fuller</a>, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a></p>
+        <p class="venue"><i>IROS 2023</i></p>
+        <div class="tags"><a href="https://homes.cs.washington.edu/~vsiyer/Papers/flybar-compressed.pdf">Paper</a></div>
+      </div>
+    </article>
+
+    <div class="year">2022</div>
+    <article class="pub reveal">
+      <img src="assets/pubs/bioMouse_website.gif" alt="Biodegradable computer mouse" loading="lazy">
+      <div>
+        <h3>A Tale of Two Mice: Sustainable Electronics Design and Prototyping</h3>
+        <p class="authors"><span class="me">Vicente Arroyos</span>, Maria Viitaniemi, Nicholas Keehn, Vaidehi Oruganti, Winston Saunders, Karin Strauss, <a href="https://homes.cs.washington.edu/~vsiyer/">Vikram Iyer</a>, <a href="https://www.microsoft.com/en-us/research/people/bnguy/">Bichlien Nguyen</a></p>
+        <p class="venue"><i>CHI 2022 (Extended Abstracts)</i> <span class="badge">Press: UW News</span></p>
+        <div class="tags"><a href="https://homes.cs.washington.edu/~vsiyer/Papers/biomouse-chi22.pdf">Paper</a><a href="https://files.sigchi.org/conference/attachment/10072/content/73211/poster/362eb5b3-b97e-4f76-2161-e17b2af493f2.pdf">Poster</a><a href="https://www.youtube.com/watch?v=xqlQaBCa9Q4">Talk</a><a href="https://www.youtube.com/watch?v=_RSacy7w4Lw">Video</a></div>
+      </div>
+    </article>
+    <article class="pub reveal">
+      <img src="assets/pubs/leafout_bistability_website.gif" alt="Leaf-out origami grasping" loading="lazy">
+      <div>
+        <h3>Leaf-like Origami with Bistability for Self-Adaptive Grasping Motions</h3>
+        <p class="authors"><a href="https://hiromiyasuda.gitlab.io/research-web/#Research">Hiromi Yasuda</a>, <a href="https://kcwjohnson.com">Kyle Johnson</a>, <span class="me">Vicente Arroyos</span>, Koshiro Yamaguchi, <a href="https://directory.seas.upenn.edu/jordan-r-raney">Jordan R. Raney</a>, <a href="https://www.aa.washington.edu/facultyfinder/jinkyu-jk-yang">Jinkyu Yang</a></p>
+        <p class="venue"><i>Soft Robotics 9(5), 2022</i></p>
+        <div class="tags"><a href="https://arxiv.org/abs/2011.01428">arXiv</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="outreach">
+  <div class="wrap reveal">
+    <h2>Outreach</h2>
+    <p class="sub">Widening access to engineering</p>
+    <div class="outreach">
+      <img src="assets/pubs/AVELA_logo_website.svg" alt="AVELA logo">
+      <p>I co-founded <a href="https://sites.google.com/avelaccess.org/avela-non-profit-website" style="color:var(--accent)">AVELA — A Vision for Engineering Literacy &amp; Access</a>, a STEM outreach nonprofit where I serve on the board. K–12 outreach is one of my passions: AVELA runs workshops, camps and mentorship that broaden STEM interest among Black, Latine and other underrepresented students, in partnership with the City of Seattle, Seattle Public Schools, the Urban League and WA MESA.</p>
+    </div>
+  </div>
+</section>
+
+<section id="people">
+  <div class="wrap reveal">
+    <h2>Collaborators &amp; Community</h2>
+    <p class="sub">People and groups I work with.</p>
+    <div class="grid">
+      <a class="card" href="https://s4lab.stanford.edu/"><b>S4 Lab, Stanford</b><span>Smart Sensing Systems Lab</span></a>
+      <a class="card" href="https://zerinakapetanovic.com"><b>Zerina Kapetanovic</b><span>Stanford EE · S4 Lab PI</span></a>
+      <a class="card" href="https://homes.cs.washington.edu/~vsiyer/"><b>Vikram Iyer</b><span>UW Allen School · Ph.D. advisor</span></a>
+      <a class="card" href="https://faculty.washington.edu/minster/"><b>Sawyer Fuller</b><span>UW · Autonomous Insect Robotics Lab</span></a>
+      <a class="card" href="https://kcwjohnson.com"><b>Kyle Johnson</b><span>UW · near-gram robots</span></a>
+      <a class="card" href="https://tilboon.github.io/"><b>Tilboon Elberier</b><span>UCLA · LEMUR Lab</span></a>
+      <a class="card" href="https://zachary.englhardt.com"><b>Zachary Englhardt</b><span>UW</span></a>
+      <a class="card" href="https://billyen33.com"><b>Bill Yen</b><span>Stanford · S4 Lab</span></a>
+      <a class="card" href="https://genevaecola.com"><b>Geneva Ecola</b><span>Stanford · S4 Lab</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="press">
+  <div class="wrap reveal">
+    <h2>In the news</h2>
+    <p class="sub">&nbsp;</p>
+    <ul class="press">
+      <li>“These Tiny Sensors Ride the Wind Like Dandelion Seeds” — <span>CNET</span></li>
+      <li>“Q&amp;A: Making Earth-friendly electronics” — <span>UW News, Oct 2022</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal">
+    <h2>Get in touch</h2>
+    <p class="sub">Happy to chat about research, collaboration or outreach.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:arroyv@uw.edu">arroyv@uw.edu</a>
+      <a class="btn" href="assets/Vicente_Arroyos_CV.pdf">Download CV</a>
+      <a class="btn" href="https://scholar.google.com/citations?user=Eqpou6QAAAAJ&hl=en">Google Scholar</a>
+      <a class="btn" href="https://github.com/arroyv">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/vicente-arroyos/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Vicente Arroyos</span>
+    <span>Stanford S4 Lab · Palo Alto, CA</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var root = document.documentElement;
+try { var t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+document.getElementById('theme').onclick = function () {
+  var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+};
+var io = new IntersectionObserver(function (es) {
+  es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>
